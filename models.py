@@ -23,6 +23,7 @@ class Booking(Base):
     client = Column(String)
     date = Column(String)
     price = Column(String)
+    status = Column(String, default="Confirmed")
 
     service = relationship("Service")
 

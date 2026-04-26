@@ -25,6 +25,7 @@ class BookingBase(BaseModel):
     client: str
     date: str
     price: Optional[str] = None
+    status: Optional[str] = "Confirmed"
 
 class BookingCreate(BookingBase):
     pass

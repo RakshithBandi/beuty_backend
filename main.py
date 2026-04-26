@@ -180,6 +180,7 @@ def get_bookings(db: Session = Depends(get_db)):
             "client": b.client,
             "date": b.date,
             "price": b.price,
+            "status": b.status,
             "service_name": b.service.name if b.service else "Unknown"
         }
         result.append(booking_data)
@@ -208,6 +209,7 @@ def create_booking(booking: schemas.BookingCreate, db: Session = Depends(get_db)
         "client": db_booking.client,
         "date": db_booking.date,
         "price": db_booking.price,
+        "status": db_booking.status,
         "service_name": db_booking.service_name
     }
 
